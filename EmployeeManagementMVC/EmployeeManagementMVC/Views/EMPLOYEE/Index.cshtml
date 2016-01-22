@@ -1,0 +1,101 @@
+﻿@model IEnumerable<EmployeeManagementMVC.Models.EMPLOYEE>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.EMPLOYEE_ID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FIRST_NAME)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LAST_NAME)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EMAIL)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PHONE_NUMBER)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HIRE_DATE)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.JOB_ID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SALARY)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.COMMISSION_PCT)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DEPARTMENT.DEPARTMENT_NAME)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EMPLOYEE1.FIRST_NAME)
+            </th>
+            <th></th>
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.EMPLOYEE_ID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FIRST_NAME)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LAST_NAME)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EMAIL)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PHONE_NUMBER)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HIRE_DATE)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.JOB_ID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SALARY)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.COMMISSION_PCT)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DEPARTMENT.DEPARTMENT_NAME)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EMPLOYEE1.FIRST_NAME)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.EMPLOYEE_ID }) |
+                @Html.ActionLink("Details", "Details", new { id=item.EMPLOYEE_ID }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.EMPLOYEE_ID })
+            </td>
+        </tr>
+    }
+    
+    </table>
+</body>
+</html>
