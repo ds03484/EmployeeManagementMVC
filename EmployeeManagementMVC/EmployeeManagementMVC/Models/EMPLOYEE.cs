@@ -11,7 +11,7 @@ namespace EmployeeManagementMVC.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
     public partial class EMPLOYEE
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -22,8 +22,11 @@ namespace EmployeeManagementMVC.Models
         }
     
         public int EMPLOYEE_ID { get; set; }
+        [Required(ErrorMessage = "FIRST_NAME is required")]
         public string FIRST_NAME { get; set; }
+        [Required(ErrorMessage = "LAST_NAME is required")]
         public string LAST_NAME { get; set; }
+        [Required(ErrorMessage = "EMAIL is required")]
         public string EMAIL { get; set; }
         public string PHONE_NUMBER { get; set; }
         public System.DateTime HIRE_DATE { get; set; }
